@@ -18,7 +18,7 @@ class Game():
         x = 0
         hayGanador = False
         
-        while True: #vaciando los eventos
+        while not hayGanador: #vaciando los eventos
             #comprobación eventos
             for event in pygame.event.get(): #metodo. atributo event tiene un metodo get(), event es un objetos (listener/escuchador de eventos). iterable desd la última comprobación
                 if event.type == pygame.QUIT:
@@ -30,7 +30,7 @@ class Game():
             self.__screen.blit(self.runner, (x,240))
             pygame.display.flip() #refresca
             
-            x += 3
+            x += 3 #de tres en tres
             if x >= 250:
                 hayGanador = True
         
